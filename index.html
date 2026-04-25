@@ -6,14 +6,13 @@
     <style>
         body, html {
             margin: 0; padding: 0;
-            background-color: #333; /* 先生の選んだ基本の灰色 */
+            background-color: #333;
             color: #f0f0f0;
             font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
             overflow: hidden;
             height: 100vh;
             transition: background 2s ease;
         }
-        /* 虹色ロゴの回転 */
         .logo-container {
             position: absolute; top: 20px; left: 20px;
             width: 50px; height: 50px;
@@ -25,13 +24,16 @@
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        /* 柔らかく光るリンク */
+        /* ホワイト大百科（ブログへのリンク） */
         .encyclopedia-link {
             position: absolute; top: 30px; right: 30px;
             padding: 8px 20px;
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 30px;
             cursor: pointer;
+            color: #f0f0f0;
+            text-decoration: none; /* 下線を消す */
+            display: inline-block;
             transition: all 0.8s ease;
         }
         .encyclopedia-link:hover {
@@ -40,7 +42,6 @@
             background: rgba(255,255,255,0.05);
         }
 
-        /* 鼓動するカーソル */
         .cursor {
             display: inline-block;
             width: 2px; height: 1.2em;
@@ -51,7 +52,6 @@
         }
         @keyframes heartBeat { 0%, 100% { opacity: 1; } 50% { opacity: 0.1; } }
 
-        /* 映像体験のシミュレーション */
         .main-stage {
             display: flex; align-items: center; justify-content: center;
             height: 100%; flex-direction: column;
@@ -68,7 +68,8 @@
 </head>
 <body>
     <div class="logo-container"></div>
-    <div class="encyclopedia-link">ホワイト大百科</div>
+    
+    <a href="blog.html" class="encyclopedia-link">ホワイト大百科（Blog）</a>
     
     <div class="main-stage">
         <div class="telop">HELLO WORLD</div>
@@ -78,10 +79,8 @@
     </div>
 
     <script>
-        // 先生の意図：再生終了後に深い灰色へ
         setTimeout(() => {
             document.body.style.background = "#1a1a1a";
-            console.log("余韻のフェーズへ移行しました。");
         }, 10000);
     </script>
 </body>
